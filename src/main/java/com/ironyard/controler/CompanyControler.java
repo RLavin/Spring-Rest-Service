@@ -1,7 +1,6 @@
 package com.ironyard.controler;
 
 import com.ironyard.data.company;
-import com.ironyard.data.employees;
 import com.ironyard.repositories.CompanyPagingRepository;
 import com.ironyard.repositories.CompanyRepository;
 
@@ -31,24 +30,24 @@ public class CompanyControler {
         this.companyPagingRepository = companyPagingRepository;
     }
 
-    @RequestMapping(value = "/company", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/service/company", method = RequestMethod.POST, produces = "application/json")
     public company save(@RequestBody company aCompany){
         companyRepository.save(aCompany);
         return companyRepository.findOne(aCompany.getId());
     }
 
-    @RequestMapping(value = "/company/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/service/company/update", method = RequestMethod.PUT)
     public company update(@RequestBody company aCompany){
         companyRepository.save(aCompany);
         return companyRepository.findOne(aCompany.getId());
     }
 
-    @RequestMapping(value = "/company/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/service/company/{id}", method = RequestMethod.GET)
     public company show(@PathVariable Long id){
         return companyRepository.findOne(id);
     }
 
-    @RequestMapping(value = "/companies", method = RequestMethod.GET)
+    @RequestMapping(value = "/service/companies", method = RequestMethod.GET)
    public Iterable<company> list (@RequestParam(value = "page") Integer page,
                                     @RequestParam("size") Integer size,
                                     @RequestParam(value = "sortby", required = false) String sortby,
@@ -79,7 +78,7 @@ public class CompanyControler {
 
 
 
-    @RequestMapping(value = "/company/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/service/company/delete/{id}", method = RequestMethod.DELETE)
     public company delete(@PathVariable Long id){
         company deleted = companyRepository.findOne(id);
         companyRepository.delete(id);

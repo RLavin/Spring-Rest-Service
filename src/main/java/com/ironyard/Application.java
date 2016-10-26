@@ -25,10 +25,10 @@ public class Application {
     @Bean
     public Docket newsApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("company")
+                .groupName("service")
                 .apiInfo(apiInfo())
                 .select()
-                .paths(regex("/compan.*"))
+                .paths(regex("/service.*"))
                 .build();
     }
 
