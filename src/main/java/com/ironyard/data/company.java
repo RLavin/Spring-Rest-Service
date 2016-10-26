@@ -11,7 +11,7 @@ import java.util.List;
 public class company {
     private String name;
     private String address;
-    private String foundeddate;
+    private String foundedDate;
     private int worth;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -38,12 +38,12 @@ public class company {
         this.address = address;
     }
 
-    public String getFoundeddate() {
-        return foundeddate;
+    public String getFoundedDate() {
+        return foundedDate;
     }
 
-    public void setFoundeddate(String foundeddate) {
-        this.foundeddate = foundeddate;
+    public void setFoundedDate(String foundedDate) {
+        this.foundedDate = foundedDate;
     }
 
     public int getWorth() {

@@ -12,24 +12,40 @@ import javax.persistence.Id;
  */
 @Entity
 public class employees {
-    private String name;
+    private String firstName;
+    private String lastName;
     private int age;
     private String gender;
     private String address;
-    private String startdate;
+    private String startDate;
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
     public int getAge() {
@@ -56,13 +72,7 @@ public class employees {
         this.address = address;
     }
 
-    public String getStartdate() {
-        return startdate;
-    }
 
-    public void setStartdate(String startdate) {
-        this.startdate = startdate;
-    }
 
     public long getId() {
         return id;
